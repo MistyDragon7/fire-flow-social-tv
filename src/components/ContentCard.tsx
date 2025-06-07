@@ -2,6 +2,7 @@
 import React from 'react';
 import { Play, Plus, Heart, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import StreamingBadge from './StreamingBadge';
 
 interface ContentCardProps {
   title: string;
@@ -12,6 +13,7 @@ interface ContentCardProps {
   genre?: string;
   size?: 'small' | 'medium' | 'large';
   showWatchedBy?: string[];
+  streamingService?: string;
 }
 
 const ContentCard = ({ 
@@ -22,7 +24,8 @@ const ContentCard = ({
   year = 2023, 
   genre = "Action",
   size = 'medium',
-  showWatchedBy = []
+  showWatchedBy = [],
+  streamingService = "Netflix"
 }: ContentCardProps) => {
   const sizeClasses = {
     small: 'w-48 h-32',
@@ -39,6 +42,9 @@ const ContentCard = ({
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        
+        {/* Streaming Service Badge */}
+        <StreamingBadge service={streamingService} />
         
         {/* Overlay Controls */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

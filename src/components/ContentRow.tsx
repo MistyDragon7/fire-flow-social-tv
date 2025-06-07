@@ -17,6 +17,7 @@ interface ContentRowProps {
     year?: number;
     genre?: string;
     watchedBy?: string[];
+    streamingService?: string;
   }>;
 }
 
@@ -60,6 +61,7 @@ const ContentRow = ({ title, subtitle, isAI = false, content }: ContentRowProps)
               year={item.year}
               genre={item.genre}
               showWatchedBy={item.watchedBy}
+              streamingService={item.streamingService}
             />
           </div>
         ))}

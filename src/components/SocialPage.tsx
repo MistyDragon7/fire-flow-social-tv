@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { Users, MessageSquare, Calendar, Star, Play, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContentCard from './ContentCard';
 import FriendActivity from './FriendActivity';
+import SocialCollections from './SocialCollections';
 
 const SocialPage = () => {
   const friendsRecommendations = [
@@ -15,7 +15,8 @@ const SocialPage = () => {
       duration: '45 min episodes',
       year: 2023,
       genre: 'Sci-Fi',
-      watchedBy: ['Alex', 'Maya', 'Jake']
+      watchedBy: ['Alex', 'Maya', 'Jake'],
+      streamingService: 'Disney+'
     },
     {
       id: '2',
@@ -25,7 +26,8 @@ const SocialPage = () => {
       duration: '1h episodes',
       year: 2022,
       genre: 'Fantasy',
-      watchedBy: ['Sara', 'Chris']
+      watchedBy: ['Sara', 'Chris'],
+      streamingService: 'HBO Max'
     },
     {
       id: '3',
@@ -35,7 +37,8 @@ const SocialPage = () => {
       duration: '1h episodes',
       year: 2022,
       genre: 'Drama',
-      watchedBy: ['Maya', 'Alex', 'Sara', 'Jake']
+      watchedBy: ['Maya', 'Alex', 'Sara', 'Jake'],
+      streamingService: 'HBO Max'
     },
     {
       id: '4',
@@ -45,7 +48,8 @@ const SocialPage = () => {
       duration: '2h 10m',
       year: 2022,
       genre: 'Action',
-      watchedBy: ['Chris', 'Jake']
+      watchedBy: ['Chris', 'Jake'],
+      streamingService: 'Prime Video'
     }
   ];
 
@@ -82,6 +86,9 @@ const SocialPage = () => {
               </div>
               <p className="text-muted-foreground">Discover what your friends are watching and join the conversation</p>
             </div>
+
+            {/* Social Collections */}
+            <SocialCollections />
 
             {/* Watch Parties Section */}
             <div className="mb-8">
@@ -157,6 +164,7 @@ const SocialPage = () => {
                     year={item.year}
                     genre={item.genre}
                     showWatchedBy={item.watchedBy}
+                    streamingService={item.streamingService}
                     size="medium"
                   />
                 ))}

@@ -1,6 +1,8 @@
+
 import React from 'react';
 import HeroSection from './HeroSection';
 import ContentRow from './ContentRow';
+import AppLauncher from './AppLauncher';
 
 const MainPage = () => {
   const moodBasedContent = [
@@ -12,7 +14,8 @@ const MainPage = () => {
       duration: '30 min episodes',
       year: 2023,
       genre: 'Comedy-Drama',
-      watchedBy: ['Alex', 'Maya']
+      watchedBy: ['Alex', 'Maya'],
+      streamingService: 'Hulu'
     },
     {
       id: '2',
@@ -22,7 +25,8 @@ const MainPage = () => {
       duration: '1h episodes',
       year: 2023,
       genre: 'Drama',
-      watchedBy: ['Jake']
+      watchedBy: ['Jake'],
+      streamingService: 'HBO Max'
     },
     {
       id: '3',
@@ -32,7 +36,8 @@ const MainPage = () => {
       duration: '45 min episodes',
       year: 2023,
       genre: 'Comedy',
-      watchedBy: ['Sara', 'Chris', 'Maya']
+      watchedBy: ['Sara', 'Chris', 'Maya'],
+      streamingService: 'Apple TV+'
     },
     {
       id: '4',
@@ -42,7 +47,8 @@ const MainPage = () => {
       duration: '1h 47m',
       year: 2022,
       genre: 'Thriller',
-      watchedBy: ['Alex']
+      watchedBy: ['Alex'],
+      streamingService: 'HBO Max'
     }
   ];
 
@@ -55,7 +61,8 @@ const MainPage = () => {
       duration: '50 min episodes',
       year: 2022,
       genre: 'Horror-Comedy',
-      watchedBy: ['Maya', 'Jake', 'Sara']
+      watchedBy: ['Maya', 'Jake', 'Sara'],
+      streamingService: 'Netflix'
     },
     {
       id: '6',
@@ -65,7 +72,8 @@ const MainPage = () => {
       duration: '2h 19m',
       year: 2022,
       genre: 'Mystery',
-      watchedBy: ['Chris', 'Alex']
+      watchedBy: ['Chris', 'Alex'],
+      streamingService: 'Netflix'
     },
     {
       id: '7',
@@ -75,7 +83,8 @@ const MainPage = () => {
       duration: '3h 12m',
       year: 2022,
       genre: 'Sci-Fi',
-      watchedBy: ['Jake', 'Maya']
+      watchedBy: ['Jake', 'Maya'],
+      streamingService: 'Disney+'
     },
     {
       id: '8',
@@ -85,7 +94,8 @@ const MainPage = () => {
       duration: '1h episodes',
       year: 2022,
       genre: 'Dark Comedy',
-      watchedBy: ['Sara', 'Alex', 'Chris']
+      watchedBy: ['Sara', 'Alex', 'Chris'],
+      streamingService: 'HBO Max'
     }
   ];
 
@@ -98,7 +108,8 @@ const MainPage = () => {
       duration: '2h 19m',
       year: 2022,
       genre: 'Sci-Fi',
-      watchedBy: ['Maya']
+      watchedBy: ['Maya'],
+      streamingService: 'Prime Video'
     },
     {
       id: '10',
@@ -108,7 +119,8 @@ const MainPage = () => {
       duration: '2h 56m',
       year: 2022,
       genre: 'Action',
-      watchedBy: ['Jake', 'Chris']
+      watchedBy: ['Jake', 'Chris'],
+      streamingService: 'HBO Max'
     },
     {
       id: '11',
@@ -118,7 +130,8 @@ const MainPage = () => {
       duration: '1h episodes',
       year: 2022,
       genre: 'Drama',
-      watchedBy: ['Sara', 'Maya', 'Alex']
+      watchedBy: ['Sara', 'Maya', 'Alex'],
+      streamingService: 'HBO Max'
     },
     {
       id: '12',
@@ -128,13 +141,16 @@ const MainPage = () => {
       duration: '2h 35m',
       year: 2021,
       genre: 'Sci-Fi',
-      watchedBy: ['Chris', 'Jake']
+      watchedBy: ['Chris', 'Jake'],
+      streamingService: 'Prime Video'
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
+      
+      <AppLauncher />
       
       <ContentRow
         title="Perfect for Your Evening Mood"
