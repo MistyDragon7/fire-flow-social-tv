@@ -23,34 +23,34 @@ interface ContentRowProps {
 
 const ContentRow = ({ title, subtitle, isAI = false, content }: ContentRowProps) => {
   return (
-    <div className="mb-8">
-      <div className="flex items-center justify-between mb-4 px-4">
+    <div className="mb-10 px-4">
+      <div className="flex items-center justify-between mb-4">
         <div>
-          <div className="flex items-center space-x-2">
-            <h2 className="text-xl font-bold text-foreground">{title}</h2>
+          <div className="flex items-center space-x-3">
+            <h2 className="text-2xl font-bold text-white">{title}</h2>
             {isAI && (
-              <div className="flex items-center bg-gradient-to-r from-purple-500 to-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+              <div className="flex items-center bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-2 py-1 rounded text-xs font-bold">
                 <Sparkles className="w-3 h-3 mr-1" />
-                AI Curated
+                AI
               </div>
             )}
           </div>
           {subtitle && (
-            <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>
+            <p className="text-sm text-gray-400 mt-1">{subtitle}</p>
           )}
         </div>
         
         <div className="flex space-x-2">
-          <Button variant="ghost" size="icon" className="w-8 h-8">
+          <Button variant="ghost" size="icon" className="w-8 h-8 text-gray-400 hover:text-white hover:bg-white/10">
             <ChevronLeft className="w-4 h-4" />
           </Button>
-          <Button variant="ghost" size="icon" className="w-8 h-8">
+          <Button variant="ghost" size="icon" className="w-8 h-8 text-gray-400 hover:text-white hover:bg-white/10">
             <ChevronRight className="w-4 h-4" />
           </Button>
         </div>
       </div>
       
-      <div className="flex space-x-4 overflow-x-auto scrollbar-hide px-4">
+      <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
         {content.map((item) => (
           <div key={item.id} className="flex-shrink-0">
             <ContentCard

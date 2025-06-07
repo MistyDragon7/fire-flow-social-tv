@@ -147,30 +147,37 @@ const MainPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black text-white">
       <HeroSection />
       
       <AppLauncher />
       
-      <ContentRow
-        title="Perfect for Your Evening Mood"
-        subtitle="Relaxing content recommended based on the time of day"
-        isAI={true}
-        content={moodBasedContent}
-      />
-      
-      <ContentRow
-        title="Trending with Friends"
-        subtitle="What's popular in your social circle"
-        content={trendingContent}
-      />
-      
-      <ContentRow
-        title="Because You Watched Stranger Things"
-        subtitle="AI-powered recommendations based on your viewing history"
-        isAI={true}
-        content={personalizedContent}
-      />
+      <div className="space-y-8">
+        <ContentRow
+          title="Continue Watching"
+          subtitle="Pick up where you left off"
+          content={moodBasedContent}
+        />
+        
+        <ContentRow
+          title="Trending Now"
+          subtitle="What's popular right now"
+          content={trendingContent}
+        />
+        
+        <ContentRow
+          title="Because You Watched Stranger Things"
+          subtitle="More like what you love"
+          isAI={true}
+          content={personalizedContent}
+        />
+        
+        <ContentRow
+          title="Amazon Originals"
+          subtitle="Award-winning shows and movies"
+          content={moodBasedContent}
+        />
+      </div>
     </div>
   );
 };

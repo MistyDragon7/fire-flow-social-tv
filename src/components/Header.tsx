@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Search, User, Bell } from 'lucide-react';
+import { Search, User, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface HeaderProps {
@@ -10,44 +10,75 @@ interface HeaderProps {
 
 const Header = ({ onSocialPageToggle, showingSocialPage }: HeaderProps) => {
   return (
-    <header className="bg-background/95 backdrop-blur-sm border-b border-border/50 p-4 sticky top-0 z-50">
+    <header className="bg-black/95 backdrop-blur-sm p-4 sticky top-0 z-50">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
-        <div className="flex items-center space-x-6">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-            FireStream
-          </h1>
-          <nav className="flex space-x-4">
+        {/* Left side - Logo and Navigation */}
+        <div className="flex items-center space-x-8">
+          {/* Profile Icon */}
+          <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+            <User className="w-6 h-6 text-white" />
+          </div>
+          
+          {/* Navigation */}
+          <nav className="flex space-x-6">
             <Button
-              variant={!showingSocialPage ? "default" : "ghost"}
+              variant={!showingSocialPage ? "ghost" : "ghost"}
               onClick={() => !showingSocialPage && onSocialPageToggle()}
-              className="text-sm"
+              className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${
+                !showingSocialPage 
+                  ? 'text-white border-white bg-transparent hover:bg-white/10' 
+                  : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'
+              }`}
             >
               Home
             </Button>
             <Button
-              variant={showingSocialPage ? "default" : "ghost"}
+              variant="ghost"
+              className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10"
+            >
+              Find
+            </Button>
+            <Button
+              variant="ghost"
+              className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10"
+            >
+              Live
+            </Button>
+            <Button
+              variant={showingSocialPage ? "ghost" : "ghost"}
               onClick={onSocialPageToggle}
-              className="text-sm"
+              className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${
+                showingSocialPage 
+                  ? 'text-white border-white bg-transparent hover:bg-white/10' 
+                  : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'
+              }`}
             >
               Social
             </Button>
           </nav>
         </div>
         
-        <div className="flex items-center space-x-4">
-          <div className="relative hidden md:block">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-            <input
-              type="text"
-              placeholder="Search movies, shows, friends..."
-              className="bg-secondary/50 border border-border/30 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 w-64"
-            />
+        {/* Right side - Apps and Settings */}
+        <div className="flex items-center space-x-3">
+          {/* Quick App Icons */}
+          <div className="flex space-x-2">
+            <div className="w-10 h-8 bg-red-600 rounded flex items-center justify-center">
+              <span className="text-white text-xs font-bold">N</span>
+            </div>
+            <div className="w-10 h-8 bg-blue-500 rounded flex items-center justify-center">
+              <span className="text-white text-xs font-bold">P</span>
+            </div>
+            <div className="w-10 h-8 bg-yellow-500 rounded flex items-center justify-center">
+              <span className="text-white text-xs font-bold">F</span>
+            </div>
+            <div className="w-10 h-8 bg-red-500 rounded flex items-center justify-center">
+              <span className="text-white text-xs font-bold">YT</span>
+            </div>
           </div>
-          <Button variant="ghost" size="icon">
-            <Bell className="w-5 h-5" />
-          </Button>
-          <Button variant="ghost" size="icon">
-            <User className="w-5 h-5" />
+          
+          {/* Settings */}
+          <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+            <Settings className="w-6 h-6" />
           </Button>
         </div>
       </div>

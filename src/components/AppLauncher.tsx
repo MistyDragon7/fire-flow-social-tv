@@ -7,35 +7,38 @@ interface App {
   name: string;
   icon: string;
   color: string;
+  logo?: string;
 }
 
 const AppLauncher = () => {
   const apps: App[] = [
-    { id: '1', name: 'Netflix', icon: 'N', color: 'bg-red-600' },
-    { id: '2', name: 'Prime Video', icon: 'P', color: 'bg-blue-500' },
-    { id: '3', name: 'Disney+', icon: 'D+', color: 'bg-blue-700' },
-    { id: '4', name: 'Hulu', icon: 'H', color: 'bg-green-500' },
-    { id: '5', name: 'HBO Max', icon: 'HBO', color: 'bg-purple-600' },
-    { id: '6', name: 'YouTube', icon: 'YT', color: 'bg-red-500' },
-    { id: '7', name: 'Apple TV+', icon: 'TV+', color: 'bg-gray-800' },
-    { id: '8', name: 'Paramount+', icon: 'P+', color: 'bg-blue-600' }
+    { id: '1', name: 'Netflix', icon: 'NETFLIX', color: 'bg-red-600', logo: 'text-white font-bold' },
+    { id: '2', name: 'Prime Video', icon: 'prime video', color: 'bg-blue-600', logo: 'text-white text-xs' },
+    { id: '3', name: 'Disney+', icon: 'Disney+', color: 'bg-blue-800', logo: 'text-white font-bold text-xs' },
+    { id: '4', name: 'HBO Max', icon: 'HBO max', color: 'bg-purple-700', logo: 'text-white text-xs font-bold' },
+    { id: '5', name: 'Hulu', icon: 'hulu', color: 'bg-green-500', logo: 'text-white font-bold' },
+    { id: '6', name: 'YouTube', icon: 'YouTube', color: 'bg-red-500', logo: 'text-white font-bold text-xs' },
+    { id: '7', name: 'Apple TV+', icon: 'tv+', color: 'bg-gray-800', logo: 'text-white text-xs' },
+    { id: '8', name: 'Twitch', icon: 'twitch', color: 'bg-purple-600', logo: 'text-white font-bold' },
+    { id: '9', name: 'Freevee', icon: 'freevee', color: 'bg-yellow-500', logo: 'text-black text-xs font-bold' },
+    { id: '10', name: 'Peacock', icon: 'peacock', color: 'bg-blue-500', logo: 'text-white text-xs' }
   ];
 
   return (
-    <div className="mb-8 px-4">
-      <h2 className="text-lg font-semibold mb-4 text-foreground">Your Apps</h2>
-      <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
+    <div className="px-4 mb-8">
+      <div className="flex space-x-3 overflow-x-auto scrollbar-hide">
         {apps.map((app) => (
           <Button
             key={app.id}
             variant="ghost"
-            className="flex-shrink-0 flex flex-col items-center p-3 hover:bg-accent/50 transition-colors"
+            className="flex-shrink-0 p-0 hover:scale-105 transition-transform"
             onClick={() => console.log(`Launching ${app.name}`)}
           >
-            <div className={`w-16 h-16 rounded-lg ${app.color} flex items-center justify-center text-white font-bold text-sm mb-2 shadow-lg`}>
-              {app.icon}
+            <div className={`w-20 h-14 rounded ${app.color} flex items-center justify-center shadow-lg border border-white/10`}>
+              <span className={`${app.logo} leading-tight text-center`}>
+                {app.icon}
+              </span>
             </div>
-            <span className="text-xs text-center text-muted-foreground">{app.name}</span>
           </Button>
         ))}
       </div>
