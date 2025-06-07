@@ -1,8 +1,6 @@
-
 import React from 'react';
 import HeroSection from './HeroSection';
 import ContentRow from './ContentRow';
-import FriendActivity from './FriendActivity';
 
 const MainPage = () => {
   const moodBasedContent = [
@@ -136,37 +134,27 @@ const MainPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="flex">
-        {/* Main Content */}
-        <div className="flex-1">
-          <HeroSection />
-          
-          <ContentRow
-            title="Perfect for Your Evening Mood"
-            subtitle="Relaxing content recommended based on the time of day"
-            isAI={true}
-            content={moodBasedContent}
-          />
-          
-          <ContentRow
-            title="Trending with Friends"
-            subtitle="What's popular in your social circle"
-            content={trendingContent}
-          />
-          
-          <ContentRow
-            title="Because You Watched Stranger Things"
-            subtitle="AI-powered recommendations based on your viewing history"
-            isAI={true}
-            content={personalizedContent}
-          />
-        </div>
-        
-        {/* Friend Activity Sidebar */}
-        <div className="w-80 p-4 hidden lg:block">
-          <FriendActivity />
-        </div>
-      </div>
+      <HeroSection />
+      
+      <ContentRow
+        title="Perfect for Your Evening Mood"
+        subtitle="Relaxing content recommended based on the time of day"
+        isAI={true}
+        content={moodBasedContent}
+      />
+      
+      <ContentRow
+        title="Trending with Friends"
+        subtitle="What's popular in your social circle"
+        content={trendingContent}
+      />
+      
+      <ContentRow
+        title="Because You Watched Stranger Things"
+        subtitle="AI-powered recommendations based on your viewing history"
+        isAI={true}
+        content={personalizedContent}
+      />
     </div>
   );
 };
