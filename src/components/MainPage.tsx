@@ -5,7 +5,7 @@ import ContentRow from './ContentRow';
 import AppLauncher from './AppLauncher';
 
 const MainPage = () => {
-  const moodBasedContent = [
+  const continueWatchingContent = [
     {
       id: '1',
       title: 'The Bear',
@@ -99,7 +99,7 @@ const MainPage = () => {
     }
   ];
 
-  const personalizedContent = [
+  const friendsRecommendations = [
     {
       id: '9',
       title: 'Everything Everywhere All at Once',
@@ -108,7 +108,7 @@ const MainPage = () => {
       duration: '2h 19m',
       year: 2022,
       genre: 'Sci-Fi',
-      watchedBy: ['Maya'],
+      watchedBy: ['Maya', 'Jake'],
       streamingService: 'Prime Video'
     },
     {
@@ -146,36 +146,80 @@ const MainPage = () => {
     }
   ];
 
+  const amazonOriginalsContent = [
+    {
+      id: '13',
+      title: 'The Boys',
+      image: 'photo-1517604931442-7e0c8ed2963c',
+      rating: 4.7,
+      duration: '1h episodes',
+      year: 2023,
+      genre: 'Superhero',
+      watchedBy: ['Jake', 'Chris'],
+      streamingService: 'Prime Video'
+    },
+    {
+      id: '14',
+      title: 'The Marvelous Mrs. Maisel',
+      image: 'photo-1489599828345-e2f5b0b3915f',
+      rating: 4.6,
+      duration: '50 min episodes',
+      year: 2023,
+      genre: 'Comedy',
+      watchedBy: ['Sara', 'Maya'],
+      streamingService: 'Prime Video'
+    },
+    {
+      id: '15',
+      title: 'Citadel',
+      image: 'photo-1440404653325-ab127d49abc1',
+      rating: 4.1,
+      duration: '1h episodes',
+      year: 2023,
+      genre: 'Action',
+      watchedBy: ['Alex'],
+      streamingService: 'Prime Video'
+    },
+    {
+      id: '16',
+      title: 'The Power',
+      image: 'photo-1578662996442-48f60103fc96',
+      rating: 4.3,
+      duration: '45 min episodes',
+      year: 2023,
+      genre: 'Sci-Fi',
+      watchedBy: ['Maya', 'Jake'],
+      streamingService: 'Prime Video'
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background">
       <HeroSection />
       
       <AppLauncher />
       
-      <div className="space-y-8">
+      <div className="space-y-6 pb-8">
         <ContentRow
           title="Continue Watching"
-          subtitle="Pick up where you left off"
-          content={moodBasedContent}
+          content={continueWatchingContent}
         />
         
         <ContentRow
           title="Trending Now"
-          subtitle="What's popular right now"
           content={trendingContent}
         />
         
         <ContentRow
-          title="Because You Watched Stranger Things"
-          subtitle="More like what you love"
+          title="Because Your Friends Watched"
+          subtitle="Popular with your circle"
           isAI={true}
-          content={personalizedContent}
+          content={friendsRecommendations}
         />
         
         <ContentRow
           title="Amazon Originals"
-          subtitle="Award-winning shows and movies"
-          content={moodBasedContent}
+          content={amazonOriginalsContent}
         />
       </div>
     </div>
