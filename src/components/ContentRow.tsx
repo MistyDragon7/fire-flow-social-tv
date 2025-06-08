@@ -1,6 +1,6 @@
 
 import React from 'react';
-import ContentCard from './ContentCard';
+import HoverContentCard from './HoverContentCard';
 import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -16,6 +16,7 @@ interface ContentRowProps {
     duration?: string;
     year?: number;
     genre?: string;
+    description?: string;
     watchedBy?: string[];
     streamingService?: string;
   }>;
@@ -58,13 +59,14 @@ const ContentRow = ({
             className="flex-shrink-0 animate-fade-in"
             style={{ animationDelay: `${index * 50}ms` }}
           >
-            <ContentCard 
+            <HoverContentCard 
               title={item.title} 
               image={item.image} 
               rating={item.rating} 
               duration={item.duration} 
               year={item.year} 
               genre={item.genre} 
+              description={item.description}
               showWatchedBy={item.watchedBy} 
               streamingService={item.streamingService} 
             />
