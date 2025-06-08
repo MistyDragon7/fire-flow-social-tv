@@ -1,8 +1,8 @@
-
 import React from 'react';
 import HeroSection from './HeroSection';
 import ContentRow from './ContentRow';
 import AppLauncher from './AppLauncher';
+import MoodRecommender from './MoodRecommender';
 
 const MainPage = () => {
   const continueWatchingContent = [
@@ -199,7 +199,9 @@ const MainPage = () => {
       
       <AppLauncher />
       
-      <div className="space-y-6 pb-8">
+      <MoodRecommender />
+      
+      <div className="space-y-8 pb-8">
         <ContentRow
           title="Continue Watching"
           content={continueWatchingContent}

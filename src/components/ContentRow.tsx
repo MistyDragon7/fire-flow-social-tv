@@ -1,7 +1,9 @@
+
 import React from 'react';
 import ContentCard from './ContentCard';
 import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
 interface ContentRowProps {
   title: string;
   subtitle?: string;
@@ -18,23 +20,29 @@ interface ContentRowProps {
     streamingService?: string;
   }>;
 }
+
 const ContentRow = ({
   title,
   subtitle,
   isAI = false,
   content
 }: ContentRowProps) => {
-  return <div className="mb-8 px-4">
-      <div className="flex items-center justify-between mb-3">
+  return (
+    <div className="mb-10 px-4">
+      <div className="flex items-center justify-between mb-4">
         <div>
-          <div className="flex items-center space-x-2">
-            <h2 className="text-lg font-semibold text-foreground">{title}</h2>
-            {isAI && <div className="flex items-center bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-2 py-0.5 rounded text-xs font-bold">
+          <div className="flex items-center space-x-3">
+            <h2 className="text-xl font-semibold text-foreground tracking-tight">{title}</h2>
+            {isAI && (
+              <div className="flex items-center bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-3 py-1 rounded-md text-xs font-bold shadow-lg">
                 <Sparkles className="w-3 h-3 mr-1" />
                 AI
-              </div>}
+              </div>
+            )}
           </div>
-          {subtitle && <p className="text-xs text-muted-foreground mt-0.5">{subtitle}</p>}
+          {subtitle && (
+            <p className="text-sm text-muted-foreground mt-1 font-light">{subtitle}</p>
+          )}
         </div>
         
         <div className="flex space-x-1">
@@ -43,11 +51,28 @@ const ContentRow = ({
         </div>
       </div>
       
-      <div className="flex space-x-3 overflow-x-auto scrollbar-hide">
-        {content.map(item => <div key={item.id} className="flex-shrink-0">
-            <ContentCard title={item.title} image={item.image} rating={item.rating} duration={item.duration} year={item.year} genre={item.genre} showWatchedBy={item.watchedBy} streamingService={item.streamingService} />
-          </div>)}
+      <div className="flex space-x-4 overflow-x-auto scrollbar-hide pb-2">
+        {content.map((item, index) => (
+          <div 
+            key={item.id} 
+            className="flex-shrink-0 animate-fade-in"
+            style={{ animationDelay: `${index * 50}ms` }}
+          >
+            <ContentCard 
+              title={item.title} 
+              image={item.image} 
+              rating={item.rating} 
+              duration={item.duration} 
+              year={item.year} 
+              genre={item.genre} 
+              showWatchedBy={item.watchedBy} 
+              streamingService={item.streamingService} 
+            />
+          </div>
+        ))}
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default ContentRow;
