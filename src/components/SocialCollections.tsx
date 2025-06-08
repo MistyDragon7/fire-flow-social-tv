@@ -23,22 +23,22 @@ const SocialCollections = () => {
     {
       id: '1',
       name: 'Weekend Binge Watch',
-      contributors: ['You', 'Alex', 'Maya'],
+      contributors: ['You', 'Arav', 'Aryan'],
       createdBy: 'You',
       items: [
-        { id: '1', title: 'The Bear', addedBy: 'Alex', image: 'photo-1514933651103-005eec06c04b', service: 'Hulu' },
-        { id: '2', title: 'Wednesday', addedBy: 'Maya', image: 'photo-1489599828345-e2f5b0b3915f', service: 'Netflix' },
-        { id: '3', title: 'House of the Dragon', addedBy: 'You', image: 'photo-1578662996442-48f60103fc96', service: 'HBO Max' }
+        { id: '1', title: 'The Bear', addedBy: 'Arav', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg', service: 'Hulu' },
+        { id: '2', title: 'Wednesday', addedBy: 'Aryan', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg', service: 'Netflix' },
+        { id: '3', title: 'House of the Dragon', addedBy: 'You', image: 'https://wallpapercat.com/w/full/8/c/f/124601-3840x2160-desktop-4k-stranger-things-wallpaper-image.jpg', service: 'HBO Max' }
       ]
     },
     {
       id: '2',
       name: 'Sci-Fi Favorites',
-      contributors: ['Jake', 'Sara', 'You'],
-      createdBy: 'Jake',
+      contributors: ['Anvesh', 'Divyanshu', 'You'],
+      createdBy: 'Anvesh',
       items: [
-        { id: '4', title: 'Dune', addedBy: 'Jake', image: 'photo-1440404653325-ab127d49abc1', service: 'Prime Video' },
-        { id: '5', title: 'Avatar: The Way of Water', addedBy: 'Sara', image: 'photo-1517604931442-7e0c8ed2963c', service: 'Disney+' }
+        { id: '4', title: 'Dune', addedBy: 'Anvesh', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg', service: 'Prime Video' },
+        { id: '5', title: 'Avatar: The Way of Water', addedBy: 'Divyanshu', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg', service: 'Disney+' }
       ]
     }
   ]);
@@ -88,7 +88,7 @@ const SocialCollections = () => {
                 {collection.items.slice(0, 3).map((item) => (
                   <div key={item.id} className="relative group">
                     <img
-                      src={`https://images.unsplash.com/${item.image}?auto=format&fit=crop&w=200&q=80`}
+                      src={item.image.startsWith('http') ? item.image : `https://images.unsplash.com/${item.image}?auto=format&fit=crop&w=400&q=80`}
                       alt={item.title}
                       className="w-full h-20 object-cover rounded"
                     />

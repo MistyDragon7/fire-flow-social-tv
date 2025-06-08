@@ -4,51 +4,54 @@ import { Button } from '@/components/ui/button';
 import ContentCard from './ContentCard';
 import FriendActivity from './FriendActivity';
 import SocialCollections from './SocialCollections';
+import FadeInOnScroll from './FadeInOnScroll';
+import HoverContentCard from './HoverContentCard';
+
 
 const SocialPage = () => {
   const friendsRecommendations = [
     {
       id: '1',
       title: 'The Mandalorian',
-      image: 'photo-1440404653325-ab127d49abc1',
+      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg',
       rating: 4.6,
       duration: '45 min episodes',
       year: 2023,
       genre: 'Sci-Fi',
-      watchedBy: ['Alex', 'Maya', 'Jake'],
+      watchedBy: ['Arav', 'Aryan', 'Anvesh'],
       streamingService: 'Disney+'
     },
     {
       id: '2',
       title: 'House of the Dragon',
-      image: 'photo-1578662996442-48f60103fc96',
+      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg',
       rating: 4.4,
       duration: '1h episodes',
       year: 2022,
       genre: 'Fantasy',
-      watchedBy: ['Sara', 'Chris'],
+      watchedBy: ['Divyanshu', 'Chirag'],
       streamingService: 'HBO Max'
     },
     {
       id: '3',
       title: 'Euphoria',
-      image: 'photo-1489599828345-e2f5b0b3915f',
+      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sccDflItNho4OiHkzpiDxB2fUFw.jpg',
       rating: 4.3,
       duration: '1h episodes',
       year: 2022,
       genre: 'Drama',
-      watchedBy: ['Maya', 'Alex', 'Sara', 'Jake'],
+      watchedBy: ['Aryan', 'Arav', 'Divyanshu', 'Anvesh'],
       streamingService: 'HBO Max'
     },
     {
       id: '4',
       title: 'Top Gun: Maverick',
-      image: 'photo-1517604931442-7e0c8ed2963c',
+      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/mLyW3UTgi2lsMdtueYODcfAB9Ku.jpg',
       rating: 4.7,
       duration: '2h 10m',
       year: 2022,
       genre: 'Action',
-      watchedBy: ['Chris', 'Jake'],
+      watchedBy: ['Chirag', 'Anvesh'],
       streamingService: 'Prime Video'
     }
   ];
@@ -57,16 +60,16 @@ const SocialPage = () => {
     {
       id: '1',
       title: 'Marvel Movie Marathon',
-      host: 'Alex',
-      participants: ['Maya', 'Jake', 'You'],
+      host: 'Arav',
+      participants: ['Aryan', 'Anvesh', 'You'],
       time: 'Tonight 8:00 PM',
       movie: 'Avengers: Endgame'
     },
     {
       id: '2',
       title: 'Horror Night',
-      host: 'Sara',
-      participants: ['Chris', 'You'],
+      host: 'Divyanshu',
+      participants: ['Chirag', 'You'],
       time: 'Fri 9:00 PM',
       movie: 'The Conjuring'
     }
@@ -74,6 +77,8 @@ const SocialPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <FadeInOnScroll>
+
       <div className="flex">
         {/* Main Social Content */}
         <div className="flex-1 p-4">
@@ -155,7 +160,7 @@ const SocialPage = () => {
               
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {friendsRecommendations.map((item) => (
-                  <ContentCard
+                  <HoverContentCard
                     key={item.id}
                     title={item.title}
                     image={item.image}
@@ -194,6 +199,7 @@ const SocialPage = () => {
           <FriendActivity />
         </div>
       </div>
+                    </FadeInOnScroll>
     </div>
   );
 };

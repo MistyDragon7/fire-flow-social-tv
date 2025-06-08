@@ -37,52 +37,52 @@ const ContentCard = ({
     <div className="group relative rounded overflow-hidden transition-all duration-300 hover:scale-105 hover:z-10">
       <div className={`${sizeClasses[size]} relative bg-gray-900`}>
         <img
-          src={`https://images.unsplash.com/${image}?auto=format&fit=crop&w=400&q=80`}
+          src={image.startsWith('http') ? image : `https://images.Chirag.com/${image}?auto=format&fit=crop&w=400&q=80`}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-300"
         />
         
         {/* Dark overlay on hover */}
-        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
         
-        {/* Streaming Service Badge */}
-        <StreamingBadge service={streamingService} />
+        {/* Streaming Service Badge
+        <StreamingBadge service={streamingService} /> */}
         
         {/* Play button overlay */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {/* <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Button size="sm" className="bg-white text-black hover:bg-gray-200 font-semibold">
             <Play className="w-4 h-4 mr-1" />
             Play
           </Button>
-        </div>
+        </div> */}
 
         {/* Quick Actions */}
-        <div className="absolute top-2 right-2 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {/* <div className="absolute top-2 right-2 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Button size="icon" variant="secondary" className="w-6 h-6 bg-black/50 hover:bg-black/70 border-0">
             <Plus className="w-3 h-3 text-white" />
           </Button>
           <Button size="icon" variant="secondary" className="w-6 h-6 bg-black/50 hover:bg-black/70 border-0">
             <Heart className="w-3 h-3 text-white" />
           </Button>
-        </div>
+        </div> */}
 
         {/* Content quality badge */}
-        {rating > 4.5 && (
+        {/* {rating > 4.5 && (
           <div className="absolute top-2 left-2 bg-yellow-500 text-black px-2 py-1 rounded text-xs font-bold">
             4K
           </div>
-        )}
+        )} */}
       </div>
 
       {/* Content Info - Only visible on hover */}
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <h3 className="font-semibold text-sm text-white mb-1 line-clamp-1">{title}</h3>
+        {/* <h3 className="font-semibold text-sm text-white mb-1 line-clamp-1">{title}</h3>
         <div className="flex items-center justify-between text-xs text-gray-300">
           <span>{year} • {genre}</span>
           <span>★ {rating}</span>
-        </div>
+        </div> */}
         
-        {showWatchedBy.length > 0 && (
+        {/* {showWatchedBy.length > 0 && (
           <div className="mt-2 flex items-center text-xs text-blue-400">
             <div className="flex -space-x-1 mr-2">
               {showWatchedBy.slice(0, 3).map((friend, index) => (
@@ -93,7 +93,7 @@ const ContentCard = ({
             </div>
             <span>Watched by friends</span>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

@@ -65,11 +65,11 @@ const MoodRecommender = () => {
 
   const mockRecommendations: Record<string, RecommendedContent[]> = {
     'feel-good': [
-      { id: '1', title: 'Ted Lasso', image: 'photo-1489599828345-e2f5b0b3915f', genre: 'Comedy', year: 2023, streamingService: 'Apple TV+' },
-      { id: '2', title: 'Schitt\'s Creek', image: 'photo-1440404653325-ab127d49abc1', genre: 'Comedy', year: 2020, streamingService: 'Netflix' },
-      { id: '3', title: 'The Good Place', image: 'photo-1514933651103-005eec06c04b', genre: 'Comedy', year: 2020, streamingService: 'Netflix' },
-      { id: '4', title: 'Brooklyn Nine-Nine', image: 'photo-1578662996442-48f60103fc96', genre: 'Comedy', year: 2021, streamingService: 'NBC' },
-      { id: '5', title: 'Parks and Recreation', image: 'photo-1517604931442-7e0c8ed2963c', genre: 'Comedy', year: 2020, streamingService: 'NBC' }
+      { id: '1', title: 'The Office', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/mLyW3UTgi2lsMdtueYODcfAB9Ku.jpg', genre: 'Comedy', year: 2023, streamingService: 'Apple TV+' },
+      { id: '2', title: 'Brooklyn-99', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9AeiA1XtP5sel2tAf9LaGeUjhDb.jpg', genre: 'Comedy', year: 2020, streamingService: 'Netflix' },
+      { id: '3', title: 'The Big Bang Theory', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sccDflItNho4OiHkzpiDxB2fUFw.jpg', genre: 'Comedy', year: 2020, streamingService: 'Netflix' },
+      { id: '4', title: 'How I Met Your Mother', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg', genre: 'Comedy', year: 2021, streamingService: 'NBC' },
+      { id: '5', title: 'Modern Family', image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/x4lxFIhhrDI4nWtV8osnYwbGESV.jpg', genre: 'Comedy', year: 2020, streamingService: 'NBC' }
     ],
     'intense': [
       { id: '6', title: 'The Boys', image: 'photo-1517604931442-7e0c8ed2963c', genre: 'Action', year: 2023, streamingService: 'Prime Video' },
@@ -104,7 +104,7 @@ const MoodRecommender = () => {
   const handleMoodSelection = async (moodId: string) => {
     setSelectedMood(moodId);
     setIsLoading(true);
-    
+
     // Simulate API call delay
     setTimeout(() => {
       setRecommendations(mockRecommendations[moodId] || []);
@@ -118,83 +118,83 @@ const MoodRecommender = () => {
   };
 
   return (
-    <div className="mb-8 px-4">
-      <div className="glass-effect rounded-xl p-6 max-w-6xl mx-auto">
-        <div className="flex items-center space-x-3 mb-6">
-          <div className="p-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500">
-            <Sparkles className="w-6 h-6 text-white" />
+    <div className="mb-10 px-4">
+      <div className="glass-effect rounded-xl p-8 max-w-full">
+        <div className="flex items-center space-x-4 mb-8">
+          <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 shadow-lg">
+            <Sparkles className="w-7 h-7 text-white" />
           </div>
           <div>
-            <h2 className="text-2xl font-semibold text-foreground tracking-tight">Can't Decide What to Watch?</h2>
-            <p className="text-muted-foreground text-sm mt-1">Pick your mood and get personalized recommendations</p>
+             <h2 className="text-3xl font-bold text-foreground tracking-tight">Can't Decide What to Watch?</h2>
+            <p className="text-muted-foreground text-lg mt-2 font-medium">Pick your mood and get personalized AI recommendations</p>
           </div>
         </div>
 
         {!selectedMood ? (
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {moods.map((mood) => (
               <Button
                 key={mood.id}
                 onClick={() => handleMoodSelection(mood.id)}
                 variant="ghost"
-                className="h-24 flex-col space-y-2 border border-border hover:border-primary/50 transition-all duration-300 group relative overflow-hidden"
+                className="h-32 flex-col space-y-3 border border-border/50 hover:border-primary/60 transition-all duration-300 group relative overflow-hidden rounded-xl"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${mood.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                <div className={`p-2 rounded-lg bg-gradient-to-br ${mood.gradient} text-white`}>
+                <div className={`absolute inset-0 bg-gradient-to-br ${mood.gradient} opacity-0 group-hover:opacity-15 transition-opacity duration-300`} />
+                <div className={`p-3 rounded-xl bg-gradient-to-br ${mood.gradient} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                   {mood.icon}
                 </div>
-                <div className="text-center">
-                  <div className="font-medium text-sm">{mood.name}</div>
-                  <div className="text-xs text-muted-foreground">{mood.description}</div>
+                <div className="text-center relative z-10">
+                  <div className="font-semibold text-base">{mood.name}</div>
+                  <div className="text-sm text-muted-foreground">{mood.description}</div>
                 </div>
               </Button>
             ))}
           </div>
         ) : (
           <div className="animate-fade-in">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center space-x-3">
-                <div className={`p-2 rounded-lg bg-gradient-to-br ${moods.find(m => m.id === selectedMood)?.gradient} text-white`}>
+           <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center space-x-4">
+                <div className={`p-3 rounded-xl bg-gradient-to-br ${moods.find(m => m.id === selectedMood)?.gradient} text-white shadow-lg`}>
                   {moods.find(m => m.id === selectedMood)?.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold">{moods.find(m => m.id === selectedMood)?.name} Recommendations</h3>
-                  <p className="text-muted-foreground text-sm">Perfect for your current mood</p>
+                   <h3 className="text-2xl font-bold">{moods.find(m => m.id === selectedMood)?.name} Recommendations</h3>
+                  <p className="text-muted-foreground text-lg">AI-curated for your current mood</p>
                 </div>
               </div>
-              <Button onClick={resetSelection} variant="outline" size="sm">
+               <Button onClick={resetSelection} variant="outline" size="lg" className="text-base">
                 Try Another Mood
               </Button>
             </div>
 
             {isLoading ? (
-              <div className="flex items-center justify-center py-12">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-                <span className="ml-3 text-muted-foreground">Finding perfect matches...</span>
+              <div className="flex items-center justify-center py-16">
+                <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></div>
+                <span className="ml-4 text-muted-foreground text-lg">Finding perfect matches...</span>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+               <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
                 {recommendations.map((item, index) => (
                   <div 
                     key={item.id} 
-                    className="group relative rounded-lg overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-300 animate-scale-in"
+                    className="group relative rounded-xl overflow-hidden bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 animate-scale-in hover:scale-105"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="aspect-video relative">
                       <img
-                        src={`https://images.unsplash.com/${item.image}?auto=format&fit=crop&w=400&q=80`}
+                        src={item.image.startsWith('http') ? item.image : `https://images.unsplash.com/${item.image}?auto=format&fit=crop&w=400&q=80`}
                         alt={item.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                      <div className="absolute top-2 right-2 text-xs bg-black/50 text-white px-2 py-1 rounded">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+                      <div className="absolute top-3 right-3 text-xs bg-black/60 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg font-medium">
                         {item.streamingService}
                       </div>
                     </div>
-                    <div className="p-3">
-                      <h4 className="font-medium text-sm line-clamp-1 mb-1">{item.title}</h4>
-                      <div className="flex justify-between text-xs text-muted-foreground">
-                        <span>{item.genre}</span>
+                    <div className="p-4">
+                      <h4 className="font-semibold text-base line-clamp-1 mb-2">{item.title}</h4>
+                      <div className="flex justify-between text-sm text-muted-foreground">
+                        <span className="font-medium">{item.genre}</span>
                         <span>{item.year}</span>
                       </div>
                     </div>

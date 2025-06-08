@@ -1,10 +1,10 @@
 
 import React from 'react';
-import HoverContentCard from './HoverContentCard';
+import ContentCard from './ContentCard';
 import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-interface ContentRowProps {
+interface AppRowProps {
   title: string;
   subtitle?: string;
   isAI?: boolean;
@@ -16,18 +16,17 @@ interface ContentRowProps {
     duration?: string;
     year?: number;
     genre?: string;
-    description?: string;
     watchedBy?: string[];
     streamingService?: string;
   }>;
 }
 
-const ContentRow = ({
+const AppRow = ({
   title,
   subtitle,
   isAI = false,
   content
-}: ContentRowProps) => {
+}: AppRowProps) => {
   return (
     <div className="mb-10 px-4">
       <div className="flex items-center justify-between mb-4">
@@ -59,14 +58,13 @@ const ContentRow = ({
             className="flex-shrink-0 animate-fade-in"
             style={{ animationDelay: `${index * 50}ms` }}
           >
-             <HoverContentCard 
+            <ContentCard 
               title={item.title} 
               image={item.image} 
               rating={item.rating} 
               duration={item.duration} 
               year={item.year} 
               genre={item.genre} 
-               description={item.description}
               showWatchedBy={item.watchedBy} 
               streamingService={item.streamingService} 
             />
@@ -77,4 +75,4 @@ const ContentRow = ({
   );
 };
 
-export default ContentRow;
+export default AppRow;

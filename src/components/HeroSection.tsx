@@ -5,17 +5,17 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <div className="relative h-[65vh] mb-8 overflow-hidden mx-4">
+    <div className="relative h-[90vh] mb-8 overflow-hidden mx-4">
       {/* Main Featured Banner */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1489599828345-e2f5b0b3915f?auto=format&fit=crop&w=2000&q=80"
+          src="https://wallpapercat.com/w/full/8/c/f/124601-3840x2160-desktop-4k-stranger-things-wallpaper-image.jpg"
           alt="Featured Content"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-      </div>
+      </div> */}
       
       {/* Content Overlay */}
       <div className="relative z-10 h-full flex items-center px-8">

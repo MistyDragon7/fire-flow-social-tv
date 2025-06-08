@@ -15,39 +15,39 @@ const FriendActivity = () => {
   const activities: ActivityItem[] = [
     {
       id: '1',
-      friend: 'Alex',
+      friend: 'Arav',
       action: 'watching',
       content: 'The Bear',
       time: '2 min ago',
-      image: 'photo-1514933651103-005eec06c04b'
+      image:'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/9YteO4VWteiPmEbWYJRAeBTQZPD.jpg'
     },
     {
       id: '2',
-      friend: 'Maya',
+      friend: 'Aryan',
       action: 'finished',
       content: 'Wednesday',
       time: '1 hour ago',
-      image: 'photo-1489599828345-e2f5b0b3915f'
+      image: 'https://wallpapercat.com/w/full/8/c/f/124601-3840x2160-desktop-4k-stranger-things-wallpaper-image.jpg'
     },
     {
       id: '3',
-      friend: 'Jake',
+      friend: 'Anvesh',
       action: 'liked',
       content: 'House of the Dragon',
       time: '3 hours ago',
-      image: 'photo-1578662996442-48f60103fc96'
+      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg'
     },
     {
       id: '4',
-      friend: 'Sara',
+      friend: 'Divyanshu',
       action: 'added',
       content: 'The Last of Us',
       time: '5 hours ago',
-      image: 'photo-1440404653325-ab127d49abc1'
+      image: 'https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/sccDflItNho4OiHkzpiDxB2fUFw.jpg'
     },
     {
       id: '5',
-      friend: 'Chris',
+      friend: 'Chirag',
       action: 'watching',
       content: 'Top Gun: Maverick',
       time: '1 day ago',
@@ -104,7 +104,7 @@ const FriendActivity = () => {
             
             <div className="w-12 h-8 rounded overflow-hidden flex-shrink-0">
               <img
-                src={`https://images.unsplash.com/${activity.image}?auto=format&fit=crop&w=100&q=80`}
+                src={activity.image.startsWith('http') ? activity.image : `https://images.unsplash.com/${activity.image}?auto=format&fit=crop&w=400&q=80`}
                 alt={activity.content}
                 className="w-full h-full object-cover"
               />
