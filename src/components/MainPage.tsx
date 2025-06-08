@@ -49,6 +49,28 @@ const MainPage = () => {
       genre: 'Thriller',
       watchedBy: ['Alex'],
       streamingService: 'HBO Max'
+    },
+    {
+      id: '17',
+      title: 'House of the Dragon',
+      image: 'photo-1517604931442-7e0c8ed2963c',
+      rating: 4.5,
+      duration: '1h episodes',
+      year: 2023,
+      genre: 'Fantasy',
+      watchedBy: ['Jake', 'Chris'],
+      streamingService: 'HBO Max'
+    },
+    {
+      id: '18',
+      title: 'The Last of Us',
+      image: 'photo-1514933651103-005eec06c04b',
+      rating: 4.8,
+      duration: '50 min episodes',
+      year: 2023,
+      genre: 'Drama',
+      watchedBy: ['Maya', 'Alex'],
+      streamingService: 'HBO Max'
     }
   ];
 
@@ -96,6 +118,28 @@ const MainPage = () => {
       genre: 'Dark Comedy',
       watchedBy: ['Sara', 'Alex', 'Chris'],
       streamingService: 'HBO Max'
+    },
+    {
+      id: '19',
+      title: 'Squid Game',
+      image: 'photo-1489599828345-e2f5b0b3915f',
+      rating: 4.7,
+      duration: '1h episodes',
+      year: 2023,
+      genre: 'Thriller',
+      watchedBy: ['Maya', 'Jake', 'Sara', 'Alex'],
+      streamingService: 'Netflix'
+    },
+    {
+      id: '20',
+      title: 'Top Gun: Maverick',
+      image: 'photo-1517604931442-7e0c8ed2963c',
+      rating: 4.6,
+      duration: '2h 11m',
+      year: 2022,
+      genre: 'Action',
+      watchedBy: ['Chris', 'Jake'],
+      streamingService: 'Prime Video'
     }
   ];
 
@@ -143,6 +187,28 @@ const MainPage = () => {
       genre: 'Sci-Fi',
       watchedBy: ['Chris', 'Jake'],
       streamingService: 'Prime Video'
+    },
+    {
+      id: '21',
+      title: 'The Crown',
+      image: 'photo-1514933651103-005eec06c04b',
+      rating: 4.4,
+      duration: '1h episodes',
+      year: 2023,
+      genre: 'Drama',
+      watchedBy: ['Sara', 'Maya'],
+      streamingService: 'Netflix'
+    },
+    {
+      id: '22',
+      title: 'Stranger Things 4',
+      image: 'photo-1440404653325-ab127d49abc1',
+      rating: 4.6,
+      duration: '1h 15m episodes',
+      year: 2022,
+      genre: 'Sci-Fi',
+      watchedBy: ['Jake', 'Chris', 'Maya'],
+      streamingService: 'Netflix'
     }
   ];
 
@@ -190,6 +256,28 @@ const MainPage = () => {
       genre: 'Sci-Fi',
       watchedBy: ['Maya', 'Jake'],
       streamingService: 'Prime Video'
+    },
+    {
+      id: '23',
+      title: 'Rings of Power',
+      image: 'photo-1517604931442-7e0c8ed2963c',
+      rating: 4.2,
+      duration: '1h 10m episodes',
+      year: 2023,
+      genre: 'Fantasy',
+      watchedBy: ['Chris', 'Jake'],
+      streamingService: 'Prime Video'
+    },
+    {
+      id: '24',
+      title: 'The Terminal List',
+      image: 'photo-1514933651103-005eec06c04b',
+      rating: 4.0,
+      duration: '55 min episodes',
+      year: 2022,
+      genre: 'Thriller',
+      watchedBy: ['Alex', 'Jake'],
+      streamingService: 'Prime Video'
     }
   ];
 
@@ -201,7 +289,7 @@ const MainPage = () => {
       
       <MoodRecommender />
       
-      <div className="space-y-8 pb-8">
+      <div className="space-y-8 pb-12">
         <ContentRow
           title="Continue Watching"
           content={continueWatchingContent}

@@ -21,6 +21,7 @@ export default {
 		extend: {
 			fontFamily: {
 				inter: ['Inter', 'system-ui', 'sans-serif'],
+				manrope: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
 				mono: ['JetBrains Mono', 'monospace'],
 			},
 			colors: {
@@ -109,13 +110,33 @@ export default {
 						transform: 'scale(1)',
 						opacity: '1'
 					}
+				},
+				'slide-up': {
+					'0%': {
+						transform: 'translateY(20px)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px rgba(59, 130, 246, 0.5)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.3s ease-out',
-				'scale-in': 'scale-in 0.2s ease-out'
+				'fade-in': 'fade-in 0.4s ease-out',
+				'scale-in': 'scale-in 0.3s ease-out',
+				'slide-up': 'slide-up 0.5s ease-out',
+				'glow': 'glow 3s ease-in-out infinite'
 			}
 		}
 	},
