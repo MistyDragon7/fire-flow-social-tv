@@ -1,16 +1,15 @@
-
 import React from 'react';
 import { Search, User, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 interface HeaderProps {
   onSocialPageToggle: () => void;
   showingSocialPage: boolean;
 }
-
-const Header = ({ onSocialPageToggle, showingSocialPage }: HeaderProps) => {
-  return (
-    <header className="bg-black/95 backdrop-blur-sm p-4 sticky top-0 z-50">
+const Header = ({
+  onSocialPageToggle,
+  showingSocialPage
+}: HeaderProps) => {
+  return <header className="bg-black/95 backdrop-blur-sm p-4 sticky top-0 z-50">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Left side - Logo and Navigation */}
         <div className="flex items-center space-x-8">
@@ -21,38 +20,16 @@ const Header = ({ onSocialPageToggle, showingSocialPage }: HeaderProps) => {
           
           {/* Navigation */}
           <nav className="flex space-x-6">
-            <Button
-              variant={!showingSocialPage ? "ghost" : "ghost"}
-              onClick={() => !showingSocialPage && onSocialPageToggle()}
-              className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${
-                !showingSocialPage 
-                  ? 'text-white border-white bg-transparent hover:bg-white/10' 
-                  : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'
-              }`}
-            >
+            <Button variant={!showingSocialPage ? "ghost" : "ghost"} onClick={() => !showingSocialPage && onSocialPageToggle()} className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${!showingSocialPage ? 'text-white border-white bg-transparent hover:bg-white/10' : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'}`}>
               Home
             </Button>
-            <Button
-              variant="ghost"
-              className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10"
-            >
+            <Button variant="ghost" className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10">
               Find
             </Button>
-            <Button
-              variant="ghost"
-              className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10"
-            >
+            <Button variant="ghost" className="text-lg font-medium text-gray-400 hover:text-white px-4 py-2 hover:bg-white/10">
               Live
             </Button>
-            <Button
-              variant={showingSocialPage ? "ghost" : "ghost"}
-              onClick={onSocialPageToggle}
-              className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${
-                showingSocialPage 
-                  ? 'text-white border-white bg-transparent hover:bg-white/10' 
-                  : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'
-              }`}
-            >
+            <Button variant={showingSocialPage ? "ghost" : "ghost"} onClick={onSocialPageToggle} className={`text-lg font-medium px-4 py-2 rounded-none border-b-2 transition-colors ${showingSocialPage ? 'text-white border-white bg-transparent hover:bg-white/10' : 'text-gray-400 border-transparent hover:text-white hover:bg-white/10'}`}>
               Social
             </Button>
           </nav>
@@ -62,18 +39,10 @@ const Header = ({ onSocialPageToggle, showingSocialPage }: HeaderProps) => {
         <div className="flex items-center space-x-3">
           {/* Quick App Icons */}
           <div className="flex space-x-2">
-            <div className="w-10 h-8 bg-red-600 rounded flex items-center justify-center">
-              <span className="text-white text-xs font-bold">N</span>
-            </div>
-            <div className="w-10 h-8 bg-blue-500 rounded flex items-center justify-center">
-              <span className="text-white text-xs font-bold">P</span>
-            </div>
-            <div className="w-10 h-8 bg-yellow-500 rounded flex items-center justify-center">
-              <span className="text-white text-xs font-bold">F</span>
-            </div>
-            <div className="w-10 h-8 bg-red-500 rounded flex items-center justify-center">
-              <span className="text-white text-xs font-bold">YT</span>
-            </div>
+            
+            
+            
+            
           </div>
           
           {/* Settings */}
@@ -82,8 +51,6 @@ const Header = ({ onSocialPageToggle, showingSocialPage }: HeaderProps) => {
           </Button>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
