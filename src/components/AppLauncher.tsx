@@ -29,10 +29,10 @@ const AppLauncher = () => {
           <Button
             key={app.id}
             variant="ghost"
-            className="flex-shrink-0 p-0 hover:scale-105 transition-transform fire-tv-focus"
+            className="flex-shrink-0 p-0 hover:scale-105 transition-transform focus:outline-none focus:ring-0 border-0"
             onClick={() => console.log(`Launching ${app.name}`)}
           >
-            <div className={`w-16 h-12 rounded ${app.color} flex items-center justify-center shadow-md border border-border/20`}>
+            <div className={`w-16 h-12 rounded ${app.color} flex items-center justify-center shadow-md`}>
               <span className={`${app.logo} leading-tight text-center`}>
                 {app.icon}
               </span>
